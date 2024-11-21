@@ -1,0 +1,79 @@
+{# templates/admin/dashboard.html.twig #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Bienvenue dans le Tableau de Bord de Gestion de la Bibliothèque</h1>
+        <p class="text-center mb-5">Utilisez ce tableau de bord pour gérer les utilisateurs, livres, auteurs, éditeurs et catégories de la bibliothèque.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg mb-4 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Utilisateurs</h5>
+                        <p class="card-text">Gérer les comptes des utilisateurs.</p>
+                        <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\UtilisateurCrudController'}) }}" class="btn btn-primary">Voir les utilisateurs</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg mb-4 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-book fa-3x mb-3 text-success"></i>
+                        <h5 class="card-title">Livres</h5>
+                        <p class="card-text">Ajouter, modifier et supprimer des livres dans la bibliothèque.</p>
+                        <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\LivreCrudController'}) }}" class="btn btn-success">Voir les livres</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg mb-4 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-user-edit fa-3x mb-3 text-warning"></i>
+                        <h5 class="card-title">Auteurs</h5>
+                        <p class="card-text">Gérer les informations des auteurs des livres.</p>
+                        <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\AuteurCrudController'}) }}" class="btn btn-warning">Voir les auteurs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg mb-4 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-tags fa-3x mb-3 text-info"></i>
+                        <h5 class="card-title">Catégories</h5>
+                        <p class="card-text">Organiser les livres par catégories.</p>
+                        <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\CategorieCrudController'}) }}" class="btn btn-info">Voir les catégories</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg mb-4 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-building fa-3x mb-3 text-danger"></i>
+                        <h5 class="card-title">Éditeurs</h5>
+                        <p class="card-text">Gérer les informations des éditeurs des livres.</p>
+                        <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\EditeurCrudController'}) }}" class="btn btn-danger">Voir les éditeurs</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg mb-4 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-cogs fa-3x mb-3 text-secondary"></i>
+                        <h5 class="card-title">Paramètres</h5>
+                        <p class="card-text">Configurer les paramètres de votre compte et accéder aux options d'administration.</p>
+                        <a href="{{ path('app_register') }}" class="btn btn-secondary mt-2">Créer un Utilisateur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

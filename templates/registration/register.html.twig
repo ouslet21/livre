@@ -1,0 +1,34 @@
+{# templates/registration/register.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div class="inscription-page">
+      <div class="inscription-inner">
+    <h1>Inscription</h1>
+
+    {{ form_start(registrationForm) }}
+    <div class="form-group">
+        {{ form_label(registrationForm.email) }}
+        {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(registrationForm.email) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(registrationForm.plainPassword) }}
+        {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(registrationForm.plainPassword) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(registrationForm.roles) }}
+        {{ form_widget(registrationForm.roles, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(registrationForm.roles) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    {{ form_end(registrationForm) }}
+</div>
+    </div>
+{% endblock %}
